@@ -8,7 +8,9 @@
 #define _SerialServo_H_
 #include "Arduino.h"
 
-#include <Servo.h>
+#include "Servo.h"
+
+//#define DEBUG_SERVO
 
 void setup();
 void loop();

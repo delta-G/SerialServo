@@ -22,6 +22,7 @@ void setup(){
 
   for(int i = 0; i<6; i++){
     servos[i].attach(i + 4);
+    delay(2000);
   }
 
   delay(500);
@@ -43,11 +44,12 @@ void loop(){
     else if(c == '>' && reading == true){
       reading = false;
       if(pos >= 0 && pos <= 180 && servo < 6){
-
+#ifdef DEBUG_SERVO
         Serial.print("Running servo ");
         Serial.print(servo);
         Serial.print(" to position :");
         Serial.println(pos);
+#endif
         servos[servo].write(pos);
       }
     }
